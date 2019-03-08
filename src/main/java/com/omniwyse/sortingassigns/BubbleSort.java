@@ -1,7 +1,10 @@
 package com.omniwyse.sortingassigns;
 
+import com.omniwyse.sorting.exceptions.EmptyArrayException;
+
 public class BubbleSort {
 	public int[] sortArray(int[] elements) {
+		try {
 		if(elements != null && elements.length >0) {
 			int length = elements.length;
 			for(int i=0;i<length;i++) {
@@ -18,6 +21,11 @@ public class BubbleSort {
 					break;
 				}
 			}
+		}else {
+			throw new EmptyArrayException();
+		}
+		}catch(Exception e) {
+			
 		}
 		return elements;
 	}
